@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Catalog.API": {
+    "Catalog.API Development": {
       "commandName": "Project",
       "dotnetRunMessages": "true",
       "launchBrowser": true,
