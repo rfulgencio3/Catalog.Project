@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using Basket.API.Repositories;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -20,7 +21,7 @@ namespace Basket.API
         public void ConfigureServices(IServiceCollection services)
         {
             //services.AddScoped<ICatalogContext, CatalogContext>();
-            //services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBasketRepository, BasketRepository>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
