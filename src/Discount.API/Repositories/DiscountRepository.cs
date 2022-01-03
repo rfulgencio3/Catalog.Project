@@ -21,15 +21,15 @@ namespace Discount.API.Repositories
         {
             NpgsqlConnection connection = GetConnectionPostgreSQL();
 
-            var coupon = await connection.QueryFirstOrDefaultAsync<Coupon>
+            var getCoupon = await connection.QueryFirstOrDefaultAsync<Coupon>
                 ("SELECT * FROM Coupon WHERE ProductName = @ProductName",
                 new { ProductName = productName });
 
-            if (coupon == null)
+            if (getCoupon == null)
                 return new Coupon
                 { ProductName = "NO_DISCOUNT", Amount = 0, Description = "NO_DISCOUNT_DESC" };
 
-            return coupon;
+            return getCoupon;
         }
 
         public async Task<bool> CreateDiscount(Coupon coupon)
