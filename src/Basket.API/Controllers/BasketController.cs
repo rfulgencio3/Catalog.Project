@@ -26,6 +26,8 @@ namespace Basket.API.Controllers
         [HttpPost]
         public async Task<ActionResult<ShoppingCart>> UpdateBasket([FromBody] ShoppingCart shoppingCart)
         {
+            
+            
             var response = await _basketRepository.UpdateBasket(shoppingCart);
             return StatusCode(200, response);
         }
