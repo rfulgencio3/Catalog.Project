@@ -1,0 +1,69 @@
+{
+  "Routes": [
+    //catalog.api
+    {
+      "DownstreamPathTemplate": "/api/v1/products",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "8000"
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/v1/product/{name}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "8000"
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product/{name}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/product/{category}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "catalog.api",
+          "Port": "8000"
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/product/{category}",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    //basket.api
+    {
+      "DownstreamPathTemplate": "/api/v1/basket",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "basket.api",
+          "Port": "8001"
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/basket",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    //discount.api
+    {
+      "DownstreamPathTemplate": "/api/v1/discount",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "discount.api",
+          "Port": "8002"
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/discount"
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:44349"
+  }
+}

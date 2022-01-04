@@ -37,7 +37,14 @@ services:
       context: .
       dockerfile: src/Discount.gRPC/Dockerfile
 
+  catalog.gateway:
+    image: ${DOCKER_REGISTRY-}cataloggateway
+    build:
+      context: .
+      dockerfile: src/Catalog.Gateway/Dockerfile
+
 volumes: 
   mongo_data:
   postgres_data:
   pgadmin_data:
+

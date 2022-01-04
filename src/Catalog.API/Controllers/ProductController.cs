@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
 {
-    [Route("v1/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiConventionType(typeof(DefaultApiConventions))]
     [ApiController]
     public class ProductController : ControllerBase

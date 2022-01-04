@@ -78,3 +78,11 @@ services:
       - discountdb
     ports:
       - "8003:80"
+
+  catalog.gateway:
+    container_name: catalog.gateway
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "8004:80"
+
