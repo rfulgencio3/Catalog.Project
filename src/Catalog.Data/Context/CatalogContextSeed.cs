@@ -27,7 +27,7 @@ namespace Catalog.Data.Context
                     Category = "Smartphone",
                     Description = "personal smartphone",
                     Image = "iphone-x-202112.png",
-                    Price = 2989.00M
+                    Price = 2989.00
                 }
             };
         }
